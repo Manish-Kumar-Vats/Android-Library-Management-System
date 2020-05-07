@@ -1,15 +1,15 @@
 package com.cs442.yliu308.foodorderapp;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.LinearLayout;
+import android.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 public class MenuActivity extends FragmentActivity {
 
+    private static final int CONTENT_VIEW_ID = 10101010;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,8 @@ public class MenuActivity extends FragmentActivity {
         setContentView(R.layout.activity_menu);
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.id_fragment_list, new MenuListFragment());
+        fragmentTransaction.replace(R.id.id_fragment_list, new MenuListFragment());
         fragmentTransaction.commit();
-    }
+
+        }
 }

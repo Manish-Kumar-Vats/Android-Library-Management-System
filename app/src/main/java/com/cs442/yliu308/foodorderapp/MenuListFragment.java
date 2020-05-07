@@ -1,29 +1,25 @@
 package com.cs442.yliu308.foodorderapp;
 
-/**
- * Created by liuyi on 9/23/17.
- */
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.app.Fragment;
-//import android.support.v4.app.Fragment;//不知为什么要加这个？
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.content.Context.MODE_PRIVATE;
+
+/**
+ * Created by liuyi on 9/23/17.
+ */
+
 
 public class MenuListFragment extends Fragment {
     private SharedPreferences sp;
@@ -51,7 +47,7 @@ public class MenuListFragment extends Fragment {
         mListMenuAdapter = new ItemAdapter(getActivity(), R.layout.fragment_menu_item, itemList, true);
         menuListView.setAdapter(mListMenuAdapter);
 
-        menuListView.setOnItemClickListener(new OnItemClickListener(){
+        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick (AdapterView<?> arg0, View arg1, int arg2, long arg3){
                 Item item = mListMenuAdapter.getItem(arg2);
 

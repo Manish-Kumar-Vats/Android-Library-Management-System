@@ -1,17 +1,18 @@
 package com.cs442.yliu308.foodorderapp;
 
-import android.app.Fragment;
+
+
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,17 +23,17 @@ import static android.content.Context.MODE_PRIVATE;
  * Created by liuyi on 9/23/17.
  */
 
-public class MenuCartFragment extends Fragment{
+public class MenuCartFragment extends Fragment {
     SharedPreferences sp;
 
     private int iTotalValue;
-    private OnClickListener clickHandler;
+    private View.OnClickListener clickHandler;
 
     private ItemAdapter mCartAdapter = null;
     public static List<Item> itemOrderedList;
     private TextView cartTotalPrice;
     private ListView cartListView;
-    private Button   btnCartOrder;
+    private Button btnCartOrder;
     private Button   btnCartReset;
 
 
@@ -89,7 +90,7 @@ public class MenuCartFragment extends Fragment{
         btnCartOrder = (Button)v.findViewById(R.id.cart_order);
         btnCartReset = (Button)v.findViewById(R.id.cart_reset);
 
-        clickHandler = new OnClickListener() {
+        clickHandler = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()){

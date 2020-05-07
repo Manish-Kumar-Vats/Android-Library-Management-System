@@ -1,18 +1,17 @@
 package com.cs442.yliu308.foodorderapp;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class DetailActivity extends Activity {
@@ -32,13 +31,13 @@ public class DetailActivity extends Activity {
     private SharedPreferences sp;
 
     private Intent intent;
-    private OnClickListener clickHandler;
+    private View.OnClickListener clickHandler;
 
-    private TextView  mItemName;
+    private TextView mItemName;
     private ImageView mItemImg;
     private TextView  mItemDescription;
-    private EditText  mItemOrdNum;
-    private Button    btnDetaiOrder;
+    private EditText mItemOrdNum;
+    private Button btnDetaiOrder;
     private Button    btnDetailReset;
 
     private Item      item;
@@ -76,7 +75,7 @@ public class DetailActivity extends Activity {
         btnDetaiOrder = (Button)findViewById(R.id.detail_order);
         btnDetailReset = (Button)findViewById(R.id.detail_reset);
 
-        clickHandler = new OnClickListener() {
+        clickHandler = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()){
